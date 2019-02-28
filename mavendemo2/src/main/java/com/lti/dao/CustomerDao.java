@@ -22,7 +22,7 @@ public class CustomerDao {
 
 		try {
 			Properties p = new Properties();
-			p.load(this.getClass().getClassLoader().getResourceAsStream("dev-db.properties"));
+			p.load(this.getClass().getClassLoader().getResourceAsStream("prod-db.properties"));
 
 			Class.forName(p.getProperty("driverClassName"));
 			conn = DriverManager.getConnection(p.getProperty("url"), p.getProperty("username"),
