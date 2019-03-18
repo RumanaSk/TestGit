@@ -1,8 +1,8 @@
+
 package com.lti.finance.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,23 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.lti.finance.dto.PrimaryAccountDTO;
-import com.lti.finance.dto.SecondaryAccountDTO;
-import com.lti.finance.entity.Account;
-import com.lti.finance.entity.Admin;
+import com.lti.finance.entity.AdminProducts;
 import com.lti.finance.entity.Item;
-import com.lti.finance.model.ProductModel;
-import com.lti.finance.service.AdminService;
-import com.lti.finance.service.PaymentGatewayService;
+import com.lti.finance.entity.Order;
+import com.lti.finance.service.AdminProductService;
+
 
 @Controller
 @RequestMapping(value = "cart")
 public class CartController {
 	@Autowired
-	AdminService service;
+	AdminProductService service;
 
-	@Autowired
-	private PaymentGatewayService paymentGatewayService;
+	
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String index() {
 		return "cart/index2.jsp";
@@ -41,7 +37,7 @@ public class CartController {
 		if (session.getAttribute("cart") == null) {
 			List<Item> cart = new ArrayList<Item>();
 			
-		Admin cartItem =service.find(id);
+		AdminProducts cartItem =service.find(id);
 			Item item =new Item(cartItem, 1);
 			cart.add(item);
 			session.setAttribute("cart", cart);
@@ -85,6 +81,24 @@ public class CartController {
 		return -1;
 	}
 
+	@RequestMapping(value="confirm")
+	public String confirm(HttpSession session) {
+		List<Item> cart = (List<Item>) session.getAttribute("cart");
+		System.out.println(cart);
+		Order order = transactionService.placeOrder(cart);
+		session.setAttribute("order", order);
+		return "/address.jsp";
+	}
+
+	
+	
+	@RequestMapping(value="placeOrder",method = RequestMethod.GET)
+	public String placeOrder(HttpSession session) {
+		List<Order>order=(List<Order>)session.getAttribute("order");
+		System.out.println("order");
+		session.setAttribute("order", order);
+		return  "/thankyou.jsp";
+	}
 	
 	
 	

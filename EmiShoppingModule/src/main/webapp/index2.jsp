@@ -45,7 +45,7 @@
 	<br>
 	<a href="${pageContext.request.contextPath }/controller/product/list">Continue
 		Shopping</a> 
-	<a href="${pageContext.request.contextPath }/controller/checkout/emi?sum=${total }">Checkout</a>
+	<a href="${pageContext.request.contextPath }/controller/checkout/emi?cartTotal=${total }">Checkout</a>
 	<!-- 	<a href="checkout.jsp">Checkout</a> -->
 </form>
 </body>

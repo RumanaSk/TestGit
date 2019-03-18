@@ -3,12 +3,12 @@ package com.lti.finance.entity;
 
 public class Item {
 
-	private Admin product;
-	public Admin getProduct() {
+	private AdminProducts product;
+	public AdminProducts getProduct() {
 		return product;
 	}
 
-	public void setProduct(Admin product) {
+	public void setProduct(AdminProducts product) {
 		this.product = product;
 	}
 
@@ -26,7 +26,7 @@ public class Item {
 	public Item() {
 	}
 
-	public Item(Admin product, int quantity) {
+	public Item(AdminProducts product, int quantity) {
 		this.product = product;
 		this.quantity = quantity;
 	}

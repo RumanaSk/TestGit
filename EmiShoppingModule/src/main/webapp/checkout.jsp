@@ -24,21 +24,45 @@ Choose EMi Plan<span class="err">*</span>:<br>
 								</select>
                 	
                 	
-	<td colspan="6" align="right">amount to pay :  <input type="text" id = "amountPay" placeholder="MONTHLY EMI" readonly> </td><br>		
-		<a href="paymentgateway.jsp" name="PAY NOW">PAY NOW</a>
+	<td colspan="6" align="right">amount to pay :  <input type="text" id = "amountPay"  placeholder="MONTHLY EMI" readonly> </td><br>		
+		<!--  <a href="paymentgateway.jsp" name="PAY NOW">PAY NOW</a>-->
 
                 	<input type="submit" value="Calculate EMI" name="calEMI" onclick="calculate()">
+                	<input type="submit" value="Pay Now" name="pay" onclick="emi()">
                 	
+                	<!-- <form action="controller/emi" method="POST">
+						<input id="data" type="hidden" value="" />
+						<input type="submit" />
+					</form> -->
+                	<%-- <input id="emi"type="hidden" name="emi" value="<%=request.getParameter
+  ("emiPerMonth") %>" > --%>
+ 	
 <script>
 var total = ${sessionScope.cartTotal};
 
 function calculate(){
 	var Month = document.getElementById("numberOfMonths").value;
     var emiPerMonth = total / Month;
-	document.getElementById("amountPay").value = emiPerMonth;
+    document.getElementById("amountPay").value= emiPerMonth;
+    console.log(emiPerMonth);
+    session.setAttribute("emiPerMonth",emiPerMonth);
 }
+ 
 
+</script>
+<script> 
 
+function emi(){
+
+	/* session.getAttribute("emiPerMonth",emiPerMonth)
+	document.location.href = "controller/emi?sum=${sessionScope.emiPerMonth }"; */
+	var Month = document.getElementById("numberOfMonths").value;
+    var emiPerMonth = total / Month;
+    document.getElementById("amountPay").value= emiPerMonth;
+    console.log(emiPerMonth);
+	document.location.href="controller/checkout/payemi?sum="+emiPerMonth;
+	//document.location.href="payment.jsp";
+	}
 </script>
        <%--  <%
         int emiPerMonth=Integer.parseInt(document.getElementById("amountPay").value);
