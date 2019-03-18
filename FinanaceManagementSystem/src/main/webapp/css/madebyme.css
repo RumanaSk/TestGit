@@ -1,0 +1,141 @@
+@charset "ISO-8859-1";
+.submit_button {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+.login100-form {
+    width: 100%;
+}
+
+.login100-form-title {
+    font-family: Raleway-Medium;
+    font-size: 30px;
+    color: #555;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+    display: block;
+    padding-bottom: 25px;
+    }
+    
+    .wrap-input100 {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    height: 55px;
+
+    }
+.wrap-login100 {
+    width: 560px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+        background-color: aliceblue;
+}
+.p-r-85 {
+    padding-right: 85px;
+}
+.p-l-85 {
+    padding-left: 85px;
+}
+.p-b-55 {
+    padding-bottom: 55px;
+}
+.p-t-55 {
+    padding-top: 55px;
+}
+.txt1 {
+    font-family: Raleway-SemiBold;
+    font-size: 13px;
+    color: #555;
+    line-height: 2.8;
+    text-transform: uppercase;
+}
+.input100 {
+    font-family: Raleway-Medium;
+    color: #555;
+    line-height: 1.2;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background: 0 0;
+    height: 55px;
+    padding: 0 25px;
+}
+input {
+    outline: none;
+    border: none;
+}
+textarea:focus, input:focus {
+    border-color: transparent!important;
+}
+.input100 {
+    font-family: Raleway-Medium;
+    color: #555;
+    line-height: 1.2;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background: 0 0;
+    height: 55px;
+    padding: 0 25px;
+    }
+/*     
+    .container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #ebebeb;
+    }
+     */
+     body{    font-family: Raleway-SemiBold;}
+
+     .link_block{
+    width: 50%;
+    text-align: center;
+    margin: 10 0 0 0;
+    float: right;
+    text-align: right;
+    bottom: 0;
+     }
+
+     .links_click {
+    width: 100%;
+    display: inline-flex;
+    width: 80%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 17px;
+    text-align: center;
+    font-size: 17px;
+    
+    }
+
+
+
+    footer.footer.clearfix {
+        padding: 29px;
+        bottom: 0;
+        position: fixed;
+        background: cadetblue;
+    }
